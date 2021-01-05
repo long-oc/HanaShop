@@ -10,9 +10,11 @@ and open the template in the editor.
 * {
     margin: 0;
     padding: 0;
-
+    
 }
-body{ background-color: #e9edf0;}
+body{
+    font: 14px/18px Helvetica,Arial,sans-serif;
+    background-color: #e9edf0;}
 
 header{
     position: fixed;
@@ -26,6 +28,7 @@ header{
 }
 .top-nav-menu{
     padding-bottom: 6px;
+    border-radius: 5px;
 }
 .nav-menu{
     background-position: -294px -162px;
@@ -44,6 +47,7 @@ header{
     vertical-align: middle;
 }
 .drop-down{
+    border-radius: 4px;
     overflow: visible;
     position: relative;
     margin-top: 15px;
