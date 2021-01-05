@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2021, 9:48:18 PM
+    Author     : Long
+*/
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body{ background-color: #e9edf0;}
+
+header{
+    position: fixed;
+    background-color: #008848;
+    min-width: 1200px;
+    height: 50px;
+    display: block;
+    padding-left: calc((100% - 1200px)/2);
+    padding-right: calc((100% - 1200px)/2);
+
+}
+.top-nav-menu{
+    padding-bottom: 6px;
+}
+.nav-menu{
+    background-position: -294px -162px;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    background-image:  url(https://cdn.tgdd.vn/bachhoaxanh/www/Content/images/desktop/bhxdesk@2x.v202101041331.png);
+    background-repeat: no-repeat;
+    background-size: 500px auto;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.drop-down{
+    overflow: visible;
+    position: relative;
+    margin-top: 15px;
+    background-color: white;
+    width:207.15px;
+    height: 1200px;;
+    display: block;
+    padding: 10px 10px 10px 35px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    color: #656565;
+    position: relative;
+    text-align: center;
+}
+.body-nav ul li{
+        display: block;
+    overflow: hidden;
+    line-height: 1.4em;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #1d1d1d;
+    cursor: pointer;
+}
+.body-nav ul{
+    text-align: left;
+    list-style: none;
+    
+}
+
