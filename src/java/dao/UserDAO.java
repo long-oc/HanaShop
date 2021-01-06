@@ -25,10 +25,10 @@ public class UserDAO {
     Connection con = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
- 
+
     public UserDTO checklogin(String user, String pass) throws NamingException, SQLException, NoSuchAlgorithmException {
         con = MyConnection.getConnection();
-        String query = "select userID ,userName,email ,roleID ,status from tblUsers where userName=? and password=?";
+        String query = "select userID ,userName,customerName,email ,roleID ,status from tblUsers where userName=? and password=?";
         ps = con.prepareStatement(query);
         ps.setString(1, user);
         // hash MD5
@@ -40,7 +40,7 @@ public class UserDAO {
         ps.setString(2, myHash);
         rs = ps.executeQuery();
         if (rs.next()) {
-            return new UserDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getBoolean(5));
+            return new UserDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getBoolean(6));
         }
 
         return null;

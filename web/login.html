@@ -45,12 +45,21 @@ and open the template in the editor.
                             url: url,
                             type: "post",
                             data: {txtInput: userName, txtPassword: pass},
-                            success: function (data) {
-                                console.log(data);
-                                window.location.href = "shopping.jsp";
+                            success: function ( {status, roleID,customerName} ) {
+                                console.log(status);
+                                console.log(roleID);
+                                console.log(customerName);
+                                if (status == false) {
+                                    $(".error").text( "Chào " + (customerName==null ? "Khách" : customerName) + " ! Tài Khoản Của Bạn Đã Bị H4ck");
+                                    return;
+                                }
+                                if (roleID == 2) {
+                                    window.location.href = "admin.jsp";
+                                } else
+                                    window.location.href = "home.jsp";
                             },
                             error: function ( {status}) {
-                                $(".error").text("Sai Tai Khoan Hoac Mat Khau");
+                                $(".error").text("Sai Tài Khoản Hoặc Mật Khẩu");
                                 console.log(status);
                             }
                         });
@@ -131,7 +140,7 @@ and open the template in the editor.
         .bt-login:focus{
             outline: none; 
         }.error{
-           margin-top: 10px;
+            margin-top: 10px;
         }
     </style>
 

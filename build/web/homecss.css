@@ -21,7 +21,7 @@ header{
     background-color: #008848;
     min-width: 1200px;
     height: 50px;
-    display: block;
+    display: flex;
     padding-left: calc((100% - 1200px)/2);
     padding-right: calc((100% - 1200px)/2);
 

@@ -12,13 +12,18 @@ package dto;
 public class UserDTO {
     int userID;
     String userName;
+    String customerName;
     String email;
     int roleID;
     boolean status;
 
-    public UserDTO(int userID, String userName, String email, int roleID, boolean status) {
+    public UserDTO() {
+    }
+
+    public UserDTO(int userID, String userName, String customerName, String email, int roleID, boolean status) {
         this.userID = userID;
         this.userName = userName;
+        this.customerName = customerName;
         this.email = email;
         this.roleID = roleID;
         this.status = status;
@@ -40,6 +45,13 @@ public class UserDTO {
         this.userName = userName;
     }
 
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
     public String getEmail() {
         return email;
@@ -64,5 +76,7 @@ public class UserDTO {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    
     
 }
