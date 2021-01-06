@@ -5,6 +5,7 @@
  */
 package api;
 
+import com.google.gson.Gson;
 import dao.UserDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -31,14 +32,18 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("application/json");
         try {
             String user = request.getParameter("txtInput");
             String pass = request.getParameter("txtPassword");
             if (new UserDAO().checklogin(user, pass) != null) {
-                response.getWriter().write("True");
+
+                String json = new Gson().toJson(new UserDAO().checklogin(user, pass));
+
+                response.getWriter().write(json);
             } else {
-                response.getWriter().write("False");
+               response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
         }

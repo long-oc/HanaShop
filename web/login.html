@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    </head>
+    <body>
+        <div class="form-login">
+
+            <form method="post">
+                <h1>Sign in to Hana Shop</h1>
+
+
+                <label>Username</label><br>
+
+                <input class="User-Name" type="text" name="txtInput"  placeholder="Enter Username"><br><br>
+                <label>Password</label><br>
+                <input class="Password" type="password" name="txtPassword" placeholder="Enter Password"><br><br>
+                <span class="error" style="color: red;"></span><br><br>
+                <input class="bt-login" type="submit" value="Login">
+            </form>
+        </div>
+        <script>
+            $(document).ready(function () {
+
+
+                $(document).on('submit', 'form', function () {
+                    var userName = $(".User-Name").val();
+                    var pass = $(".Password").val();
+                    if (userName === null || userName === "") {
+                        $(".error").text("UserName Doesnot Empty");
+                    } else if (!pass || pass === "") {
+                        $(".error").text("Password Doesnot Empty");
+                    } else {
+                        var url = "/HanaShop/LoginController";
+                        $.ajax({
+                            url: url,
+                            type: "post",
+                            data: {txtInput: userName, txtPassword: pass},
+                            success: function (data) {
+                                console.log(data);
+                                window.location.href = "shopping.jsp";
+                            },
+                            error: function ( {status}) {
+                                $(".error").text("Sai Tai Khoan Hoac Mat Khau");
+                                console.log(status);
+                            }
+                        });
+                    }
+                    return false;
+                });
+            });
+        </script>
+    </body>
+    <style>
+        body{
+            background-image: linear-gradient(to right, rgba(122,238,246,1) , rgba(0,255,0,0.55));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-login{
+            box-shadow:  #656565 2px 2px ;
+            border-radius: 1.1rem;
+            width: 500px;
+            height: 600px;
+
+            display: flex;
+
+            justify-content: center;
+            background-color: rgba(238,250,251,0.6);
+        }
+        .form-login h1{
+            text-align: center;
+            font-family: "Kaushan Script", cursive;
+            font-size: 2.5rem;
+        }
+        form{
+
+        }
+        label{
+            margin-bottom: 102px;
+            font-weight: 400;
+            font-family: sans-serif;
+            font-size: 17px;
+        }
+        input{
+            margin-top: 5px;
+            width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            height: 38px;
+            font-size: 1rem;
+        }
+        .User-Name{
+
+        }
+        .Password{
+
+        }
+        .bt-login{
+            border-radius: 50px;
+            cursor: pointer;
+            background: #007bff;
+            color:white;
+            text-shadow: 1.2px 1.2px #3F5657;
+        }
+        .bt-login:hover{
+            border: none;
+        }
+        .bt-login:after{
+            border: none;
+        }
+        .bt-login:active{
+            border: none;
+        }
+        .bt-login:visited{
+            border: none;
+        }
+        .bt-login:before{
+            border: none;
+        }
+        .bt-login:focus{
+            outline: none; 
+        }.error{
+           margin-top: 10px;
+        }
+    </style>
+
+</html>
