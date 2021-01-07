@@ -15,6 +15,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link href="homecss.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     </head>
     <body>
@@ -44,6 +45,10 @@
             <c:set var="USER" value="${sessionScope.USER}"></c:set>
             <c:if test="${USER ne null}" >
                 <a href="/" class="histories">Đơn Hàng<br>anh ${USER.customerName}</a>
+                <span class="history"> </span>
+            </c:if>
+                <c:if test="${USER eq null}" >
+                    <a href="/" class="histories" style="line-height:3;">Đăng Nhập</a>
                 <span class="history"> </span>
             </c:if>
             <a href="#" class="temcart">
@@ -80,7 +85,126 @@
             </c:if>
         </a>
     </header>
+    <div class="product-body">
+
+        <div class="groupfeature">
+          
+        </div>
+        </div>
+
 </body>
+<style>
+    .product-body{
+        padding-top: 100px;
+        padding-left: 435px;
+        width: 980px;
+    }
+    .product-body ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .product-body ul li{
+        width: 242.8px;
+        border: 1px solid #eee;
+    }
+    .product-body h2{
+        text-transform: uppercase;
+    }
+    .cate-product{
+        background-color: white;
+
+    }
+    .groupfeature{
+        margin-bottom: 15px;
+    }
+    .viewmore{
+        text-align: center;
+    }
+    img{
+
+        margin-left: 48px;
+    }
+    .product a{
+        text-decoration: none;
+        color: black;
+    }
+    .buy {
+
+        text-align: center;
+        width: 203px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid #008848;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    .chonmua{
+        display: block;
+        margin-top: 10px;
+        text-transform: uppercase;
+        color:#008848;
+    }
+    .product{
+        padding-bottom: 16px;
+        margin-bottom: 0.5px;
+    }
+    .product-name{
+        padding-left: 7px;
+        padding-bottom: 15px;
+    }
+    .price{
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }.hometitle{
+        margin-bottom: 12px;
+    }
+    .price strong{
+        font-size: 13px;
+        color: #b10e0e;
+    }
+    .price span{
+        text-decoration: line-through;
+        color: gray;
+        padding-left: 5px;
+    }
+    .viewmore{
+        overflow: hidden;
+        display: block;
+        font-size: 14px;
+        line-height: 45px;
+        color: #0064c2;
+        text-align: center;
+        padding: 10px 0;
+        width: 980px;
+        height: 50px;
+        background-color: white;
+        padding-top: 0px;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
     .hidden{
         display: none !important;
@@ -130,4 +254,133 @@
         margin-top:5px;
     }
 </style>
+
+<script>
+$(document).ready(function(){
+  var url = "/HanaShop/ProductController";
+                        $.ajax({
+                            url: url,
+                            type: "get",
+                            
+                            success: function ( [{cate,product}] ) {
+                                
+                               cate.map((v)=>{
+                                  var a=$(".groupfeature").html();
+                                  $(".groupfeature").html(a+$(' <h2 class="hometitle">Đồ uống các loại</h2>
+            <ul class="cate-product">
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+                <li class="product">
+                    <a href="#" >
+                        <img width="160" height="160" src="https://cdn.tgdd.vn/Products/Images/2947/79217/bhx/sua-trai-cay-nutriboost-huong-cam-1-lit-201906211625269518_300x300.jpg" alt="Sữa trái cây Nutriboost hương cam 1 lít">
+                        <div class="product-name">Sữa trái cây Nutriboost hương cam 1 lít</div>
+                        <div class="price">
+                            <strong>21.000₫</strong>
+                            <span>28.000₫</span>
+                        </div></a>
+                    <div class="buy"><span class="chonmua">Chọn mua</span></div>
+
+                </li>
+
+            </ul>
+            <div class="viewmore">Xem thêm 214 sản phẩm khuyến mãi</div>
+        </div>'));
+                               });
+                               
+                            },
+                            error: function ( {status}) {
+                                
+                                console.log(status);
+                            }
+                        });
+});
+</script>
+
+
 </html>

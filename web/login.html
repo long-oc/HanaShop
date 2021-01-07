@@ -17,10 +17,7 @@ and open the template in the editor.
 
             <form method="post">
                 <h1>Sign in to Hana Shop</h1>
-
-
                 <label>Username</label><br>
-
                 <input class="User-Name" type="text" name="txtInput"  placeholder="Enter Username"><br><br>
                 <label>Password</label><br>
                 <input class="Password" type="password" name="txtPassword" placeholder="Enter Password"><br><br>
@@ -43,7 +40,7 @@ and open the template in the editor.
                         var url = "/HanaShop/LoginController";
                         $.ajax({
                             url: url,
-                            type: "post",
+                            type: "POST",
                             data: {txtInput: userName, txtPassword: pass},
                             success: function ( {status, roleID,customerName} ) {
                                 console.log(status);
