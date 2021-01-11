@@ -11,21 +11,24 @@ import java.util.ArrayList;
  *
  * @author Long
  */
-public class CateAndProduct {
-    ArrayList<CateDTO> cate;
+public class ProductAndCount {
+    int count;
     ArrayList<ProductDTO> product;
 
-    public CateAndProduct(ArrayList<CateDTO> cate, ArrayList<ProductDTO> product) {
-        this.cate = cate;
+    public ProductAndCount() {
+    }
+
+    public ProductAndCount(int count, ArrayList<ProductDTO> product) {
+        this.count = count;
         this.product = product;
     }
 
-    public ArrayList<CateDTO> getCate() {
-        return cate;
+    public int getCount() {
+        return count;
     }
 
-    public void setCate(ArrayList<CateDTO> cate) {
-        this.cate = cate;
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public ArrayList<ProductDTO> getProduct() {
@@ -35,6 +38,8 @@ public class CateAndProduct {
     public void setProduct(ArrayList<ProductDTO> product) {
         this.product = product;
     }
+
+    
     
     
    

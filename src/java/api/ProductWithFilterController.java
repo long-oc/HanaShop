@@ -7,13 +7,10 @@ package api;
 
 import com.google.gson.Gson;
 import dao.ProductDAO;
-import dto.ProductAndCount;
-import dto.CateDTO;
 import dto.ProductDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Long
  */
-@WebServlet(name = "ProductController", urlPatterns = {"/ProductController"})
-public class ProductController extends HttpServlet {
+@WebServlet(name = "ProductWithFilterController", urlPatterns = {"/ProductWithFilterController"})
+public class ProductWithFilterController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,17 +38,25 @@ public class ProductController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         response.setContentType("application/json");
         try {
-            ProductDAO productdao = new ProductDAO();
-            String cateID= request.getParameter("cateID");
-            ArrayList<ProductDTO> listProd = productdao.getProductDefault(Integer.parseInt(cateID));
-            int count=productdao.getNumberProductWithCateID(Integer.parseInt(cateID));
-            ProductAndCount productAndCount = new ProductAndCount();
-            productAndCount.setCount(count);
-            productAndCount.setProduct(listProd);
-            String json = new Gson().toJson(productAndCount);
-            response.getWriter().write(json);
+            String cate = request.getParameter("cateID");
+            String page_index = request.getParameter("page_index");
+            String price = request.getParameter("price");
+            String searchKey = request.getParameter("searchKey");
+            if (searchKey == null) {
+                searchKey = "";
+            }
+            ProductDAO productDAO = new ProductDAO();
+            ArrayList<ProductDTO> product = new ArrayList<>();
+            if ("0".equals(price)) {
+                product = productDAO.getMoreProductWithCate(Integer.valueOf(page_index), Integer.parseInt(cate));
+                String json = new Gson().toJson(product);
+                response.getWriter().write(json);
+            } else {
+                product = productDAO.getProductWithFilter(Integer.valueOf(page_index), Integer.valueOf(cate), Float.parseFloat(price), searchKey);
+                String json = new Gson().toJson(product);
+                response.getWriter().write(json);
+            }
         } catch (Exception e) {
-            
         }
     }
 

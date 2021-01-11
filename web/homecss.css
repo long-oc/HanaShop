@@ -22,8 +22,8 @@ header{
     min-width: 1200px;
     height: 50px;
     display: flex;
-    padding-left: calc((100% - 1200px)/2);
-    padding-right: calc((100% - 1200px)/2);
+    padding-left: 100px;
+    
 
 }
 .top-nav-menu{
@@ -78,4 +78,140 @@ header{
     list-style: none;
     
 }
+    .product-body{
+        padding-top: 100px;
+        padding-left: 435px;
+        width: 980px;
+    }
+    .product-body ul{
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .product-body ul li{
+        width: 242.8px;
+        border: 1px solid #eee;
+    }
+    .product-body h2{
+        text-transform: uppercase;
+    }
+    .cate-product{
+        background-color: white;
+
+    }
+    .groupfeature{
+        margin-bottom: 15px;
+    }
+    .viewmore{
+        text-align: center;
+    }
+    img{
+        padding-top: 20px;
+        height: 140px !important;
+        margin-left: 48px;
+    }
+    .product a{
+        text-decoration: none;
+        color: black;
+    }
+    .buy {
+
+        text-align: center;
+        width: 203px;
+        height: 40px;
+        border-radius: 4px;
+        border: 1px solid #008848;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    .chonmua{
+        display: block;
+        margin-top: 10px;
+        text-transform: uppercase;
+        color:#008848;
+    }
+    .product{
+        padding-bottom: 16px;
+        margin-bottom: 0.5px;
+    }
+    .product-name{
+        padding-left: 7px;
+        padding-bottom: 15px;
+    }
+    .price{
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }.hometitle{
+        margin-bottom: 12px;
+    }
+    .price strong{
+        font-size: 13px;
+        color: #b10e0e;
+    }
+    .price span{
+        text-decoration: line-through;
+        color: gray;
+        padding-left: 5px;
+    }
+    .viewmore{
+        overflow: hidden;
+        display: block;
+        font-size: 14px;
+        line-height: 45px;
+        color: #0064c2;
+        text-align: center;
+        padding: 10px 0;
+        width: 980px;
+        height: 50px;
+        background-color: white;
+        padding-top: 0px;
+        cursor: pointer;
+    }
+    .hidden{
+        display: none !important;
+    }
+
+
+    .histories{
+        margin-top: 5px;
+        position: absolute;
+        right:  250px;
+        display: flex;
+        text-decoration: none;
+        color:white;
+        font-size: 12px;
+    }
+    .histories a:hover{
+        text-decoration: none;
+    }
+    .temcart{
+        text-decoration: none;
+        color: white;
+        background-color: rgb(3, 117, 64);
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        position: absolute;
+        right:  80px;
+        display: flex;
+    }
+    .icon-cart{
+        background-position: -256px -33px;
+        width: 22px !IMPORTANT;
+        height: 22px !IMPORTANT;
+        background-image:  url(https://cdn.tgdd.vn/bachhoaxanh/www/Content/images/desktop/bhxdesk@2x.v202101041331.png);
+        background-repeat: no-repeat;
+        background-size: 500px auto;
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+    }
+    .card{
+        margin-left: 5px;
+        margin-top:5px;
+    }
 

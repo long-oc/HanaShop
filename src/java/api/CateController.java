@@ -13,7 +13,6 @@ import dto.ProductDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.HashMap;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Long
  */
-@WebServlet(name = "ProductController", urlPatterns = {"/ProductController"})
-public class ProductController extends HttpServlet {
+@WebServlet(name = "CateController", urlPatterns = {"/CateController"})
+public class CateController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,16 +41,10 @@ public class ProductController extends HttpServlet {
         response.setContentType("application/json");
         try {
             ProductDAO productdao = new ProductDAO();
-            String cateID= request.getParameter("cateID");
-            ArrayList<ProductDTO> listProd = productdao.getProductDefault(Integer.parseInt(cateID));
-            int count=productdao.getNumberProductWithCateID(Integer.parseInt(cateID));
-            ProductAndCount productAndCount = new ProductAndCount();
-            productAndCount.setCount(count);
-            productAndCount.setProduct(listProd);
-            String json = new Gson().toJson(productAndCount);
+            ArrayList<CateDTO> listCate = productdao.getAllCate();
+            String json = new Gson().toJson(listCate);
             response.getWriter().write(json);
         } catch (Exception e) {
-            
         }
     }
 
