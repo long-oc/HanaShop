@@ -5,7 +5,9 @@
  */
 package dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+
+
 
 /**
  *
@@ -19,11 +21,11 @@ public class ProductDTO {
     String image;
     String decription;
     int quantity;
-    Date createDate;
+    Timestamp createDate;
     int cateID;
     boolean status;
 
-    public ProductDTO(int productID, String productName, float productPrice, String madeIn, String image, String decription, int quantity, Date createDate, int cateID, boolean status) {
+    public ProductDTO(int productID, String productName, float productPrice, String madeIn, String image, String decription, int quantity, Timestamp createDate, int cateID, boolean status) {
         this.productID = productID;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -34,6 +36,10 @@ public class ProductDTO {
         this.createDate = createDate;
         this.cateID = cateID;
         this.status = status;
+    }
+
+    public ProductDTO() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getProductID() {
@@ -92,11 +98,11 @@ public class ProductDTO {
         this.quantity = quantity;
     }
 
-    public Date getCreateDate() {
+    public Timestamp getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(Timestamp createDate) {
         this.createDate = createDate;
     }
 

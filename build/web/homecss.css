@@ -10,11 +10,15 @@ and open the template in the editor.
 * {
     margin: 0;
     padding: 0;
-    
+
+}
+ul {
+    list-style: none;
 }
 body{
     font: 14px/18px Helvetica,Arial,sans-serif;
-    background-color: #e9edf0;}
+    background-color: #e9edf0;
+    position: relative}
 
 header{
     position: fixed;
@@ -23,7 +27,7 @@ header{
     height: 50px;
     display: flex;
     padding-left: 100px;
-    
+    padding-right: 240px;
 
 }
 .top-nav-menu{
@@ -63,7 +67,7 @@ header{
     text-align: center;
 }
 .body-nav ul li{
-        display: block;
+    display: block;
     overflow: hidden;
     line-height: 1.4em;
     font-size: 12px;
@@ -76,142 +80,196 @@ header{
 .body-nav ul{
     text-align: left;
     list-style: none;
-    
+
 }
-    .product-body{
-        padding-top: 100px;
-        padding-left: 435px;
-        width: 980px;
-    }
-    .product-body ul{
-        list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .product-body ul li{
-        width: 242.8px;
-        border: 1px solid #eee;
-    }
-    .product-body h2{
-        text-transform: uppercase;
-    }
-    .cate-product{
-        background-color: white;
+.product-body{
+    padding-top: 100px;
+    padding-left: 435px;
+    width: 980px;
+}
+.product-body ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-body ul li{
+    width: 242.8px;
+    border: 1px solid #eee;
+}
+.product-body h2{
+    text-transform: uppercase;
+}
+.cate-product{
+    background-color: white;
 
-    }
-    .groupfeature{
-        margin-bottom: 15px;
-    }
-    .viewmore{
-        text-align: center;
-    }
-    img{
-        padding-top: 20px;
-        height: 140px !important;
-        margin-left: 48px;
-    }
-    .product a{
-        text-decoration: none;
-        color: black;
-    }
-    .buy {
+}
+.groupfeature{
+    margin-bottom: 15px;
+}
+.viewmore{
+    text-align: center;
+}
+.image{
+    padding-top: 20px;
+    height: 140px !important;
+    margin-left: 48px;
+}
+.product a{
+    text-decoration: none;
+    color: black;
+}
+.buy {
 
-        text-align: center;
-        width: 203px;
-        height: 40px;
-        border-radius: 4px;
-        border: 1px solid #008848;
-        margin-left: 20px;
-        cursor: pointer;
-    }
-    .chonmua{
-        display: block;
-        margin-top: 10px;
-        text-transform: uppercase;
-        color:#008848;
-    }
-    .product{
-        padding-bottom: 16px;
-        margin-bottom: 0.5px;
-    }
-    .product-name{
-        padding-left: 7px;
-        padding-bottom: 15px;
-    }
-    .price{
-        padding-left: 10px;
-        margin-bottom: 30px;
-    }.hometitle{
-        margin-bottom: 12px;
-    }
-    .price strong{
-        font-size: 13px;
-        color: #b10e0e;
-    }
-    .price span{
-        text-decoration: line-through;
-        color: gray;
-        padding-left: 5px;
-    }
-    .viewmore{
-        overflow: hidden;
-        display: block;
-        font-size: 14px;
-        line-height: 45px;
-        color: #0064c2;
-        text-align: center;
-        padding: 10px 0;
-        width: 980px;
-        height: 50px;
-        background-color: white;
-        padding-top: 0px;
-        cursor: pointer;
-    }
-    .hidden{
-        display: none !important;
-    }
+    text-align: center;
+    width: 203px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #008848;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.chonmua{
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color:#008848;
+}
+.product{
+    padding-bottom: 16px;
+    margin-bottom: 0.5px;
+}
+.product-name{
+    padding-left: 7px;
+    padding-bottom: 15px;
+}
+.price{
+    padding-left: 10px;
+    margin-bottom: 30px;
+}.hometitle{
+    margin-bottom: 12px;
+}
+.price strong{
+    font-size: 13px;
+    color: #b10e0e;
+}
+.price span{
+    text-decoration: line-through;
+    color: gray;
+    padding-left: 5px;
+}
+.viewmore{
+    overflow: hidden;
+    display: block;
+    font-size: 14px;
+    line-height: 45px;
+    color: #0064c2;
+    text-align: center;
+    padding: 10px 0;
+    width: 980px;
+    height: 50px;
+    background-color: white;
+    padding-top: 0px;
+    cursor: pointer;
+}
+.hidden{
+    display: none !important;
+}
 
 
-    .histories{
-        margin-top: 5px;
-        position: absolute;
-        right:  250px;
-        display: flex;
-        text-decoration: none;
-        color:white;
-        font-size: 12px;
-    }
-    .histories a:hover{
-        text-decoration: none;
-    }
-    .temcart{
-        text-decoration: none;
-        color: white;
-        background-color: rgb(3, 117, 64);
-        padding-top: 14px;
-        padding-bottom: 14px;
-        padding-left: 15px;
-        padding-right: 15px;
+.histories{
+    margin-top: 5px;
+    position: absolute;
+    right:  250px;
+    display: flex;
+    text-decoration: none;
+    color:white;
+    font-size: 12px;
+}
+.histories a:hover{
+    text-decoration: none;
+}
+.temcart{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(3, 117, 64);
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
 
-        position: absolute;
-        right:  80px;
-        display: flex;
-    }
-    .icon-cart{
-        background-position: -256px -33px;
-        width: 22px !IMPORTANT;
-        height: 22px !IMPORTANT;
-        background-image:  url(https://cdn.tgdd.vn/bachhoaxanh/www/Content/images/desktop/bhxdesk@2x.v202101041331.png);
-        background-repeat: no-repeat;
-        background-size: 500px auto;
-        display: inline-block;
-        height: 30px;
-        width: 30px;
-        line-height: 30px;
-        vertical-align: middle;
-    }
-    .card{
-        margin-left: 5px;
-        margin-top:5px;
-    }
+    position: absolute;
+    right:  80px;
+    display: flex;
+}
+.icon-cart{
+    background-position: -256px -33px;
+    width: 22px !IMPORTANT;
+    height: 22px !IMPORTANT;
+    background-image:  url(https://cdn.tgdd.vn/bachhoaxanh/www/Content/images/desktop/bhxdesk@2x.v202101041331.png);
+    background-repeat: no-repeat;
+    background-size: 500px auto;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+}
+.card{
+    margin-left: 5px;
+    margin-top:5px;
+}
+.nothing{
 
+}
+
+.nameproduct{
+    display: block;
+    overflow: hidden;
+    line-height: 1.3em;
+    font-size: 22px;
+    color: #4a4a4a;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.infoproduct ul{
+    list-style: none;
+}
+.infoproduct li span{
+    font: 14px/18px Helvetica,Arial,sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    font-size: 13px;
+    color: #999;
+    width: 18%;
+
+
+}
+.infoproduct li {
+    border-bottom: 1px solid #ecf0f1;
+    padding: 10px 5px;
+}
+.infoproduct li  div  {
+    font: 14px/18px Helvetica,Arial,sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 13px;
+    color: #4a4a4a;
+    width: 80%;
+}
+ul {
+    list-style-type: none;}
+.modal{
+    width: 1080px;height: 95vh;background-color: white; position: fixed; z-index: 1000 ; display: flex ;
+    margin-left: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.modal-m{
+    position: absolute;
+    z-index: 100;
+    background-color: #252525;
+    opacity: 0.7;
+}

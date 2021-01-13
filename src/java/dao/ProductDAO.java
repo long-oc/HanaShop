@@ -76,7 +76,7 @@ public class ProductDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getDate(8), rs.getInt(9), rs.getBoolean(10)));
+                list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getInt(9), rs.getBoolean(10)));
             }
 
         } catch (Exception e) {
@@ -106,7 +106,7 @@ public class ProductDAO {
         rs = ps.executeQuery();
 
         while (rs.next()) {
-            list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getDate(8), rs.getInt(9), rs.getBoolean(10)));
+            list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getInt(9), rs.getBoolean(10)));
         }
         return list;
     }
@@ -126,12 +126,29 @@ public class ProductDAO {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getDate(8), rs.getInt(9), rs.getBoolean(10)));
+                list.add(new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getInt(9), rs.getBoolean(10)));
             }
 
         } catch (Exception e) {
         }
         return list;
+    }
+
+    public ProductDTO getProductByID(int productID) throws NamingException, SQLException {
+
+        try {
+            con = MyConnection.getConnection();
+            String query = "select productID,productName,productPrice, madeIn,image,decription,quantity,createDate,cateID,status from tblProducts p where p.productID=? \n"
+                    + "ORDER BY p.productID\n";
+            ps = con.prepareStatement(query);
+            ps.setInt(1, productID);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new ProductDTO(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getInt(9), rs.getBoolean(10));
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 
 }
