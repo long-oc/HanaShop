@@ -19,26 +19,32 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "MainController", urlPatterns = {"/MainController"})
 public class MainController extends HttpServlet {
-private static final String LOGIN = "login.jsp";
+
+    private static final String LOGIN = "login.html";
+    private static final String LOGIN_AD = "AdminController";
     private static final String HOME = "home.jsp";
     private static final String REGISTER = "register.jsp";
     private static final String LOGIN_FORM = "LoginController";
+    private static final String ADDITEM = "AddItemController";
+    private static final String REMOVE = "RemoveItemController";
     private static final String REGISTER_FORM = "RegisterController";
+    private static final String DELETEITEM = "DeleteCartConntroller";
+    private static final String UPDATEITEMAD = "UpdateAdController";
     private static final String BOOKING = "booking.jsp";
     private static final String SEARCH = "SearchController";
     private static final String SEARCH_FORM = "SearchFormController";
     private static final String ADD = "AddController";
     private static final String DELETE = "DeleteController";
     private static final String PAYMENT = "PaymentController";
-
     private static final String DETAL = "DetailController";
     private static final String ERROR = "invalid.html";
     private static final String LOGOUT = "LogoutController";
-    private static final String BUY = "checkout.jsp";
-    private static final String MYODER = "MyOderController";
+    private static final String BUY = "Oder.jsp";
+    private static final String MYODER = "MyCartController";
     private static final String DELETE_ROOM = "DeleteRoomController";
     private static final String UPDATE_ROOM = "UpdateRoomController";
     private static final String ADD_ROOM = "AddRoomController";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -54,17 +60,29 @@ private static final String LOGIN = "login.jsp";
         String url = ERROR;
         try {
             String action = request.getParameter("action");
-             if ("register".equals(action)) {
+            if ("register".equals(action)) {
                 url = REGISTER;
             } else if ("loginForm".equals(action)) {
                 url = LOGIN_FORM;
-            } else if ("login".equals(action)){
-                url=LOGIN;
+            } else if ("login".equals(action)) {
+                url = LOGIN;
+            } else if ("order".equals(action)) {
+                url = MYODER;
+            }else if("deleteItem".equals(action)){
+                url= DELETEITEM;
+            }else if("addItem".equals(action)){
+                url= ADDITEM;
+            }else if("removeItem".equals(action)){
+                url=REMOVE;
+            }else if("loginAd".equals(action)){
+                url=LOGIN_AD;
+            }else if("updateAD".equals(action)){
+                url=UPDATEITEMAD;
             }
         } catch (Exception e) {
-           
-        }finally{
-             request.getRequestDispatcher(url).forward(request, response);
+
+        } finally {
+            request.getRequestDispatcher(url).forward(request, response);
         }
     }
 

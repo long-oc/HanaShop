@@ -34,21 +34,27 @@ public class LoginController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         response.setContentType("application/json");
+        UserDTO user = null;
+        HttpSession session = request.getSession();
         try {
             String userName = request.getParameter("txtInput");
             String pass = request.getParameter("txtPassword");
-            HttpSession session = request.getSession();
-            UserDTO user = new UserDAO().checklogin(userName, pass);
+
+            user = new UserDAO().checklogin(userName, pass);
             if (user != null) {
                 String json = new Gson().toJson(user);
                 response.getWriter().write(json);
-                session.setAttribute("USER", user);
+                
             } else {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
             }
         } catch (Exception e) {
+        } finally {
+            if(user!=null){
+                session.setAttribute("USER", user);
+            }
         }
     }
 

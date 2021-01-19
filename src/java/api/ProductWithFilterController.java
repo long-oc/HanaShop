@@ -48,7 +48,7 @@ public class ProductWithFilterController extends HttpServlet {
             ProductDAO productDAO = new ProductDAO();
             ArrayList<ProductDTO> product = new ArrayList<>();
             if ("0".equals(price) && searchKey != "") {
-                product = productDAO.getProductWithFilter(Integer.valueOf(page_index), Integer.valueOf(cate), Float.parseFloat(price), searchKey);
+                product = productDAO.getProductSearchWithOutPrice(Integer.valueOf(page_index), Integer.valueOf(cate), searchKey);
                 String json = new Gson().toJson(product);
                 response.getWriter().write(json);
             } else if ("0".equals(price)) {

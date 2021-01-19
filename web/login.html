@@ -41,8 +41,10 @@ and open the template in the editor.
                         $.ajax({
                             url: url,
                             type: "POST",
+                            async: true,
                             data: {txtInput: userName, txtPassword: pass},
                             success: function ( {status, roleID,customerName} ) {
+                                
                                 console.log(status);
                                 console.log(roleID);
                                 console.log(customerName);
@@ -51,7 +53,7 @@ and open the template in the editor.
                                     return;
                                 }
                                 if (roleID == 2) {
-                                    window.location.href = "admin.jsp";
+                                    window.location.href = "MainController?action=loginAd";
                                 } else
                                     window.location.href = "home.jsp";
                             },

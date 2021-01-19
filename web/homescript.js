@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
  function getMoreProduct(url, cateID, page_index = 0, price = 0, searchKey = "") {
         $.ajax({
             url: url,

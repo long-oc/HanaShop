@@ -3,16 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/home.jsp</file>
-            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/ProductController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/homescript.js</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/dao/ProductDAO.java</file>
             <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/login.html</file>
-            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/ProductDetail.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/AddAdController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/MainController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/DeleteItemController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/AddItemController.java</file>
             <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/LoginController.java</file>
-            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/homecss.css</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/AdminController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/UpdateAdController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/home.jsp</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/admin.jsp</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/controller/RemoveItemController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/CartController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/CateByID.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/web/Oder.jsp</file>
             <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/ProductWithFilterController.java</file>
-            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/ultis/MyConnection.java</file>
             <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/api/CateController.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/dto/ProductDTO.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/ultis/MyConnection.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/dto/ProductAdminDTO.java</file>
+            <file>file:/C:/Users/Long/Documents/NetBeansProjects/HanaShop/src/java/dto/UserDTO.java</file>
         </group>
     </open-files>
 </project-private>

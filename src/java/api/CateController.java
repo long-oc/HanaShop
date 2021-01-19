@@ -7,11 +7,8 @@ package api;
 
 import com.google.gson.Gson;
 import dao.ProductDAO;
-import dto.ProductAndCount;
 import dto.CateDTO;
-import dto.ProductDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -40,6 +40,7 @@ public class ProductDetail extends HttpServlet {
         try {
             String productID = request.getParameter("productID");
             ProductDAO productDAO = new ProductDAO();
+            
             ProductDTO productDTO = productDAO.getProductByID(Integer.parseInt(productID));
             if (productDTO == null) {
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
